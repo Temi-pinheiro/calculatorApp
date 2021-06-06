@@ -1,0 +1,265 @@
+@use 'colors';
+@use 'sass:math';
+
+$mobile-width: 375px;
+$desktop-width: 1440px;
+
+$bcSize_numbers: 32px;
+$ffamily: Spartan, sans-serif;
+$bld: 700;
+$reg: 400;
+$light: 300;
+
+@mixin themer(
+  $bg-color,
+  $screen,
+  $textColor,
+  $screenColor,
+  $num,
+  $numBG,
+  $numSH,
+  $specialBG,
+  $specialSH,
+  $equalBG,
+  $equalSH,
+  $equal,
+  $togBG
+) {
+  background-color: $bg-color;
+  color: $textColor;
+  .screen {
+    color: $screen;
+    background-color: $screenColor;
+  }
+  .calcButtons {
+    background-color: $togBG;
+
+    button {
+      box-shadow: 0px 4px 0px 0px $numSH;
+      color: $num;
+      background-color: $numBG;
+      &:hover {
+        background-color: darken($color: $numBG, $amount: 3);
+      }
+
+      &:active {
+        box-shadow: 0px 2px 0px 0px darken($color: $numSH, $amount: 3);
+        transform: translateY(2px);
+      }
+    }
+    #delete,
+    #reset {
+      background-color: $specialBG;
+      box-shadow: 0px 4px 0px 0px $specialSH;
+      color: white;
+
+      &:hover {
+        background-color: darken($color: $specialBG, $amount: 3);
+      }
+
+      &:active {
+        box-shadow: 0px 2px 0px 0px darken($color: $specialSH, $amount: 3);
+        transform: translateY(2px);
+      }
+    }
+
+    #equals {
+      background-color: $equalBG;
+      box-shadow: 0px 3px 0px 0px $equalSH;
+      color: $equal;
+
+      &:hover {
+        background-color: darken($color: $equalBG, $amount: 3);
+      }
+
+      &:active {
+        box-shadow: 0px 2px 0px 0px darken($color: $equalSH, $amount: 3);
+        transform: translateY(2px);
+      }
+    }
+  }
+}
+@mixin center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: $ffamily;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 200px;
+  //   position: absolute;
+  //   bottom: 0;
+  //   left: $desktop-width * 0.5;
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
+
+.t1 {
+  @include themer(
+    colors.$t1-mbg,
+    white,
+    white,
+    colors.$t1_sbg,
+    colors.$t1-txt,
+    colors.$t1-lgo,
+    colors.$t1-go,
+    colors.$t1-kbg,
+    colors.$t1-ks,
+    colors.$t1-red,
+    colors.$t1-dred,
+    white,
+    colors.$t1-tbg_kbg
+  );
+}
+
+.t2 {
+  @include themer(
+    colors.$t2-mbg,
+    colors.$t2-txt,
+    colors.$t2-txt,
+    colors.$white,
+    colors.$t2-txt,
+    colors.$t2-lgy,
+    colors.$t2-dgo,
+    colors.$t2-kbg,
+    colors.$t2-ks,
+    colors.$t2-o,
+    colors.$t2-do,
+    white,
+    colors.$t2-tbg_kbg
+  );
+}
+
+.t3 {
+  @include themer(
+    colors.$t3-mbg,
+    colors.$t3-txt-ly,
+    colors.$t3-txt-ly,
+    colors.$t3-sbg,
+    colors.$t3-txt-ly,
+    colors.$t3-vdv,
+    colors.$t3-dm,
+    colors.$t3-kbg,
+    colors.$t3-ks,
+    colors.$t3-pc,
+    colors.$t3-sc,
+    colors.$t3-txt-vdb,
+    colors.$t3-tbg_kbg
+  );
+}
+
+.calculator {
+  margin-top: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @include center;
+  //   max-width: math.div($desktop-width, 2);
+  max-width: 600px;
+
+  @media (min-width: $desktop-width) {
+    max-width: $desktop-width;
+  }
+
+  @media (max-width: $mobile-width) {
+    max-width: $mobile-width;
+  }
+}
+
+.calcHeader {
+  display: flex;
+  width: 100%;
+}
+
+.calcTheme {
+  margin-left: auto;
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: $bld;
+}
+
+.screen {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 4em;
+  text-align: right;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 30px 25px;
+  caret-color: transparent;
+}
+
+.themeToggle {
+  margin-left: 1.2em;
+
+  form {
+    display: flex;
+  }
+  label {
+    display: inline-block;
+    margin-left: 7px;
+  }
+  input [type='radio'] {
+    display: inline-block;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: transparent;
+  }
+}
+
+.calcButtons {
+  margin-top: 1.3em;
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%;
+  display: grid;
+  //   grid-template-columns:
+  //     minmax(math.div($mobile-width, 4), math.div($desktop-width, 4))
+  //     minmax(math.div($mobile-width, 4), math.div($desktop-width, 4)) minmax(
+  //       math.div($mobile-width, 4),
+  //       math.div($desktop-width, 4)
+  //     )
+  //     minmax(math.div($mobile-width, 4), math.div($desktop-width, 4));
+
+  grid-template-columns: repeat(4, 1fr);
+  button {
+    margin: 15px;
+    padding-top: 13px;
+    padding-bottom: 10px;
+
+    font-size: 2em;
+    font-weight: $bld;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 120ms ease-in-out;
+    // width: 80%;
+  }
+  #delete,
+  #reset,
+  #equals {
+    font-size: 20px;
+  }
+
+  #reset {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  #equals {
+    grid-column-start: 3;
+    grid-column-end: 5;
+  }
+}

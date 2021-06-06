@@ -1,0 +1,266 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: Spartan, sans-serif;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 200px;
+}
+.attribution a {
+  color: #3e52a3;
+}
+
+.t1 {
+  background-color: #3a4764;
+  color: white;
+}
+.t1 .screen {
+  color: white;
+  background-color: #182034;
+}
+.t1 .calcButtons {
+  background-color: #232c43;
+}
+.t1 .calcButtons button {
+  box-shadow: 0px 4px 0px 0px #b4a597;
+  color: #444b5a;
+  background-color: #eae3dc;
+}
+.t1 .calcButtons button:hover {
+  background-color: #e4dbd2;
+}
+.t1 .calcButtons button:active {
+  box-shadow: 0px 2px 0px 0px #ae9d8f;
+  transform: translateY(2px);
+}
+.t1 .calcButtons #delete,
+.t1 .calcButtons #reset {
+  background-color: #637097;
+  box-shadow: 0px 4px 0px 0px #404e72;
+  color: white;
+}
+.t1 .calcButtons #delete:hover,
+.t1 .calcButtons #reset:hover {
+  background-color: #5d698e;
+}
+.t1 .calcButtons #delete:active,
+.t1 .calcButtons #reset:active {
+  box-shadow: 0px 2px 0px 0px #3b4768;
+  transform: translateY(2px);
+}
+.t1 .calcButtons #equals {
+  background-color: #d03f2f;
+  box-shadow: 0px 3px 0px 0px #93261a;
+  color: white;
+}
+.t1 .calcButtons #equals:hover {
+  background-color: #c33b2c;
+}
+.t1 .calcButtons #equals:active {
+  box-shadow: 0px 2px 0px 0px #862318;
+  transform: translateY(2px);
+}
+
+.t2 {
+  background-color: #e6e6e6;
+  color: #35352c;
+}
+.t2 .screen {
+  color: #35352c;
+  background-color: #fff;
+}
+.t2 .calcButtons {
+  background-color: #d1cccc;
+}
+.t2 .calcButtons button {
+  box-shadow: 0px 4px 0px 0px #a69d91;
+  color: #35352c;
+  background-color: #e5e4e1;
+}
+.t2 .calcButtons button:hover {
+  background-color: #deddd9;
+}
+.t2 .calcButtons button:active {
+  box-shadow: 0px 2px 0px 0px #a09688;
+  transform: translateY(2px);
+}
+.t2 .calcButtons #delete,
+.t2 .calcButtons #reset {
+  background-color: #377f86;
+  box-shadow: 0px 4px 0px 0px #1b5f65;
+  color: white;
+}
+.t2 .calcButtons #delete:hover,
+.t2 .calcButtons #reset:hover {
+  background-color: #32757b;
+}
+.t2 .calcButtons #delete:active,
+.t2 .calcButtons #reset:active {
+  box-shadow: 0px 2px 0px 0px #185359;
+  transform: translateY(2px);
+}
+.t2 .calcButtons #equals {
+  background-color: #ca5502;
+  box-shadow: 0px 3px 0px 0px #893901;
+  color: white;
+}
+.t2 .calcButtons #equals:hover {
+  background-color: #bb4f02;
+}
+.t2 .calcButtons #equals:active {
+  box-shadow: 0px 2px 0px 0px #7a3301;
+  transform: translateY(2px);
+}
+
+.t3 {
+  background-color: #160628;
+  color: #ffe53d;
+}
+.t3 .screen {
+  color: #ffe53d;
+  background-color: #1d0934;
+}
+.t3 .calcButtons {
+  background-color: #1d0934;
+}
+.t3 .calcButtons button {
+  box-shadow: 0px 4px 0px 0px #871c9c;
+  color: #ffe53d;
+  background-color: #341c4f;
+}
+.t3 .calcButtons button:hover {
+  background-color: #2c1843;
+}
+.t3 .calcButtons button:active {
+  box-shadow: 0px 2px 0px 0px #7b198f;
+  transform: translateY(2px);
+}
+.t3 .calcButtons #delete,
+.t3 .calcButtons #reset {
+  background-color: #58077d;
+  box-shadow: 0px 4px 0px 0px #bc15f4;
+  color: white;
+}
+.t3 .calcButtons #delete:hover,
+.t3 .calcButtons #reset:hover {
+  background-color: #4e066f;
+}
+.t3 .calcButtons #delete:active,
+.t3 .calcButtons #reset:active {
+  box-shadow: 0px 2px 0px 0px #b60bef;
+  transform: translateY(2px);
+}
+.t3 .calcButtons #equals {
+  background-color: #00e0d1;
+  box-shadow: 0px 3px 0px 0px #6cf9f2;
+  color: #1b2428;
+}
+.t3 .calcButtons #equals:hover {
+  background-color: #00d1c3;
+}
+.t3 .calcButtons #equals:active {
+  box-shadow: 0px 2px 0px 0px #5df8f1;
+  transform: translateY(2px);
+}
+
+.calculator {
+  margin-top: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+}
+@media (min-width: 1440px) {
+  .calculator {
+    max-width: 1440px;
+  }
+}
+@media (max-width: 375px) {
+  .calculator {
+    max-width: 375px;
+  }
+}
+
+.calcHeader {
+  display: flex;
+  width: 100%;
+}
+
+.calcTheme {
+  margin-left: auto;
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: 700;
+}
+
+.screen {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 4em;
+  text-align: right;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 30px 25px;
+  caret-color: transparent;
+}
+
+.themeToggle {
+  margin-left: 1.2em;
+}
+.themeToggle form {
+  display: flex;
+}
+.themeToggle label {
+  display: inline-block;
+  margin-left: 7px;
+}
+.themeToggle input [type=radio] {
+  display: inline-block;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: transparent;
+}
+
+.calcButtons {
+  margin-top: 1.3em;
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.calcButtons button {
+  margin: 15px;
+  padding-top: 13px;
+  padding-bottom: 10px;
+  font-size: 2em;
+  font-weight: 700;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 120ms ease-in-out;
+}
+.calcButtons #delete,
+.calcButtons #reset,
+.calcButtons #equals {
+  font-size: 20px;
+}
+.calcButtons #reset {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.calcButtons #equals {
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
+
+/*# sourceMappingURL=index.css.map */
