@@ -17,6 +17,7 @@
 .t1 {
   background-color: #3a4764;
   color: white;
+  transition: all 120ms ease-in-out;
 }
 .t1 .screen {
   color: white;
@@ -68,6 +69,7 @@
 .t2 {
   background-color: #e6e6e6;
   color: #35352c;
+  transition: all 120ms ease-in-out;
 }
 .t2 .screen {
   color: #35352c;
@@ -119,6 +121,7 @@
 .t3 {
   background-color: #160628;
   color: #ffe53d;
+  transition: all 120ms ease-in-out;
 }
 .t3 .screen {
   color: #ffe53d;

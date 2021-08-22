@@ -27,6 +27,7 @@ $light: 300;
 ) {
   background-color: $bg-color;
   color: $textColor;
+  transition: all 120ms ease-in-out;
   .screen {
     color: $screen;
     background-color: $screenColor;
